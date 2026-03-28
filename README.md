@@ -1,20 +1,43 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# GrievanceGPT 
 
-# Run and deploy your AI Studio app
+AI-powered college grievance management system that converts 
+informal student complaints into formal letters and automatically 
+routes them to the correct authority via email.
 
-This contains everything you need to run your app locally.
+## Tech Stack
+- Frontend: React + Tailwind CSS (Google AI Studio)
+- Automation: n8n workflow
+- AI: Google Gemini 2.5 Flash
+- Database: Google Sheets
+- Deployment: Google AI Studio
 
-View your app in AI Studio: https://ai.studio/apps/9a4a21c0-ea67-46f1-b916-2495e640ca64
+## How It Works
+1. Student submits complaint in plain English
+2. Gemini AI rewrites it as a formal letter
+3. AI identifies correct authority automatically
+4. Email sent instantly to that authority
+5. Complaint logged in Google Sheets with reference ID
 
-## Run Locally
+## Features
+- Smart complaint routing (Hostel/Academic/Admin/Fees)
+- Priority detection (Low/Medium/High/Critical)
+- Auto-generated reference ID for tracking
+- Real-time Google Sheets logging
+- Formal letter generation via AI
 
-**Prerequisites:**  Node.js
+## Team
+- Jayanth C — n8n Automation Workflow + Product Ideation + Pitch
+- Team Members — Frontend UI/UX Design
 
+## Built At
+MoE Hackathon 2026 — Capabl
+Bangalore Institute of Technology, Bengaluru
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+After saving, run these commands:
+```
+git add README.md
+git commit -m "Add README"
+git push
