@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  
+  --color-bg: #0C0C10;
+  --color-surf: #13131A;
+  --color-card: #1A1A24;
+  --color-b: #2A2A38;
+  --color-acc: #7C6EFA;
+  --color-acc2: #A594FF;
+  --color-grn: #22D07A;
+  --color-amb: #F5A623;
+  --color-red: #FF5A5A;
+  --color-tx: #F0EFF8;
+  --color-tx2: #9998B0;
+  --color-tx3: #5A5970;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-tx font-sans antialiased;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply bg-card border border-b rounded-[10px] px-4 py-3 text-tx placeholder:text-tx3 outline-none focus:border-acc transition-all;
+  }
+  
+  .btn-primary {
+    @apply bg-acc text-white rounded-[12px] px-6 py-[13.5px] font-medium hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent border border-b rounded-[12px] px-6 py-[13.5px] font-medium hover:border-acc transition-all flex items-center justify-center gap-2;
+  }
+  
+  .pill {
+    @apply border border-b rounded-full px-4 py-1.5 text-sm font-medium transition-all cursor-pointer hover:border-acc;
+  }
+  
+  .pill-selected {
+    @apply border-acc bg-acc/10 text-acc;
+  }
+  
+  .card-base {
+    @apply bg-card border border-b rounded-[18px] p-6 transition-all;
+  }
+
+  .status-pill {
+    @apply rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider;
+  }
+  
+  .status-open { @apply bg-amb/10 text-amb border border-amb/20; }
+  .status-review { @apply bg-acc/10 text-acc border border-acc/20; }
+  .status-resolved { @apply bg-grn/10 text-grn border border-grn/20; }
+  .status-escalated { @apply bg-red/10 text-red border border-red/20; }
+}
+
+.pulsing-dot {
+  @apply w-2 h-2 rounded-full bg-grn;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 208, 122, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 208, 122, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 208, 122, 0); }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-bg;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-b rounded-full;
+}
